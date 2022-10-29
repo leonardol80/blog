@@ -17,7 +17,7 @@ const loginUser = async (email,password) =>{
             return false
         }
     } catch (error) {
-        return error
+        return false
     }
 }
 

@@ -5,8 +5,10 @@ const Users = require('../models/users.models')
 
 // const { hashPassword } = require('../utils/crypto')
 
-const getAllPosts = async () => {
-    const data = await Posts.findAll({
+const getAllPosts = async (offset,limit) => {
+    const data = await Posts.findAndCountAll({
+        offset: offset,
+        limit: limit ,
         attributes:{
             exclude: ['userId','cetegoryId','createdAt','updatedAt']
         },
